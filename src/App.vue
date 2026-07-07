@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <h1>Hello World hello Git.</h1>
+  <h2>Hello World hello Git</h2>
 </template>
 
 <style scoped>
