@@ -3,7 +3,7 @@ import InputField from "@/components/InputField.vue";
 
 export default {
   name: "LoginPage",
-  components: { InputField },
+  components: {InputField},
   data() {
     return {
       email: '',
@@ -33,14 +33,29 @@ export default {
         :placeholder="'Password'"
         :modelValue="password"/>
 
-    <button @click="login">로그인하기</button>
+    <button class="login-button" @click="login">로그인하기</button>
     <div>
       계정이 없으신가요?
-      <span>가입하기</span>
+      <span class="signup-button">가입하기</span>
     </div>
   </div>
 </template>
 
 <style scoped>
+.login-button {
+  border-radius: 20px;
+  border: 1px solid #fff;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}
 
+.signup-button {
+  color: aqua;
+  cursor: pointer;
+  text-decoration: underline;
+}
 </style>

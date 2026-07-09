@@ -7,9 +7,10 @@
 <!-- Options API -->
 <script>
 import LoginPage from "@/views/LoginPage.vue";
+
 export default {
   name: 'App',
-  components: { LoginPage }
+  components: {LoginPage}
 }
 </script>
 
@@ -21,16 +22,16 @@ export default {
 -->
 
 <style>
-  body {
-    background-color: black;
-    color: white;
-  }
+body {
+  background-color: black;
+  color: white;
+}
 
-  .container {
-    height:100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 </style>
