@@ -1,19 +1,25 @@
 <script>
 export default {
-  name: "FeedList"
+  name: "FeedList",
+  props: {
+    feed: {
+      type: Array,
+      required: true,
+    }
+  },
 }
 </script>
 
 <template>
   <div class="feed-list-container">
-    <div class="feed-container" v-for="i in 10" :key="i">
+    <div class="feed-container" v-for="item in feed" :key="item.id">
       <div class="feed-header">
         <div class="feed-content">
-          {{ i }}
+          {{ item.content }}
         </div>
         <button class="feed-delete-button">X</button>
       </div>
-      <div class="feed-name">김유저</div>
+      <div class="feed-name">{{ item.user.name }}</div>
     </div>
   </div>
 </template>
@@ -22,7 +28,7 @@ export default {
 .feed-container {
   height: 80px;
   background-color: white;
-  margin: 10px 0px;
+  margin: 10px 0;
   color: black;
   padding: 3%;
   display: flex;
