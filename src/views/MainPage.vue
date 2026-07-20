@@ -1,24 +1,14 @@
 <script>
 import FeedList from "@/components/FeedList.vue";
 import TweetBar from "@/components/TweetBar.vue";
+import {userStore} from "@/store/user.js";
 
 export default {
   name: "MainPage",
   components: {TweetBar, FeedList},
   data() {
     return {
-      feed: [
-        {
-          id: 1,
-          user: {id: 'User', name: '김유저'},
-          content: '안녕하세요',
-        },
-        {
-          id: 2,
-          user: {id: 'User', name: '김유저'},
-          content: '테스트입니다',
-        }
-      ]
+      userStore: userStore()
     }
   }
 }
@@ -28,10 +18,10 @@ export default {
   <div>
     <div class="title-container">
       <h2>Home</h2>
-      <div>User님</div>
+      <div>{{ userStore.getUserName }} 님</div>
     </div>
     <TweetBar/>
-    <FeedList :feed="feed"/>
+    <FeedList/>
   </div>
 </template>
 

@@ -1,17 +1,24 @@
 <script>
+import {userStore} from "@/store/user.js";
+
 export default {
-  name: "TweetBar"
+  name: "TweetBar",
+  data() {
+    return {
+      userStore: userStore()
+    }
+  }
 }
 </script>
 
 <template>
   <div class="container">
-    <input type="text" placeholder="what's good, user?" class="input-form"/>
+    <input type="text" :placeholder="`what's good, ${userStore.getUserName}?`" class="input-form"/>
     <img src="@/assets/search.png" alt="검색" class="search-icon"/>
   </div>
 </template>
 
-<style scope>
+<style scoped>
 .container {
   display: flex;
   flex-direction: row;
