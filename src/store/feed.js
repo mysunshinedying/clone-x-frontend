@@ -82,5 +82,8 @@ export const FeedStore = defineStore('feedStore', {
         initFeed() {
             this.feedData = this.testData
         },
+        removeFeed(id) {
+            this.feedData = this.feedData.filter(feed => feed.id !== id)
+        }
     }
 })
